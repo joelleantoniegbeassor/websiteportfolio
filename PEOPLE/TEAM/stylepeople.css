@@ -24,14 +24,16 @@ img {
     padding: 1em;
 }
 
-.text_de{
+.text_de {
     grid-area: 1/2/2/3;
     padding: 1em;
     margin: 0cm;
+    text-align: justify;
 }
 
 .text_eng {
     grid-area: 1/3/2/4;
     padding: 1em;
     margin: 0cm;
+    text-align: justify;
 }
