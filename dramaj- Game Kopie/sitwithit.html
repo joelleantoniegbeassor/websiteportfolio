@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="websiteportfolio.css">
+    <style>
+        body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+
+        .typewriter-container {
+            flex-grow: 1; /* Allow this to take up available space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .typewriter {
+            display: inline-block;
+            font-size: 1.5em;
+            color: rgb(3, 0, 109);
+            white-space: pre-wrap; /* Allows wrapping */
+            border-right: .15em solid rgb(204, 255, 0); /* Blinking cursor */
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: rgb(204, 255, 0); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .no-caret {
+            border-right: none; /* Removes the cursor */
+            animation: none; /* Stops the blinking animation */
+        }
+
+        .links {
+            margin-top: 10px; /* 10px beneath the paragraphs */
+            text-align: center;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 0 10px; /* Space between the links */
+            padding: 10px 20px; /* Padding for the links */
+            text-decoration: none;
+            background-color: rgba(204, 255, 0, 0.3); /* Background color for visibility */
+            border: 2px solid rgb(204, 255, 0); /* Border color */
+            border-radius: 5px; /* Rounded corners */
+            color: rgb(3, 0, 109); /* Text color */
+            font-size: 1.2em; /* Font size */
+            transition: all 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .links a:hover {
+            color: rgb(3, 0, 109);
+            font-size: 1.5em;
+            filter: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section section2">
+        <div class="typewriter-container">
+            <p class="typewriter hidden">You've chosen to sit with it.</p>
+            <br>
+            <p class="typewriter hidden">Sitting is the practice of change.</p>
+            <p class="typewriter hidden">It is about asking questions of how to sit with it,</p>
+            <p class="typewriter hidden">how to move through it and be with it,</p>
+            <p class="typewriter hidden">be with the anxiety.</p>
+            <br><br><br><br><br><br>
+            <div class="links hidden" id="proceed-link">
+                <a href="disclaimer_1.html" id="link1">Proceed</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraphs = document.querySelectorAll('.typewriter.hidden');
+            const proceedLink = document.getElementById('proceed-link');
+            let currentParagraph = 0;
+
+            function typeParagraph(paragraph) {
+                return new Promise((resolve) => {
+                    const text = paragraph.textContent;
+                    paragraph.textContent = '';
+                    paragraph.classList.remove('hidden');
+                    let index = 0;
+
+                    function typeCharacter() {
+                        if (index < text.length) {
+                            paragraph.textContent += text[index];
+                            index++;
+                            setTimeout(typeCharacter, 100); // Typing speed
+                        } else {
+                            if (currentParagraph < paragraphs.length - 1) {
+                                paragraph.classList.add('no-caret'); // Remove the cursor after typing if not the last paragraph
+                            }
+                            resolve();
+                        }
+                    }
+
+                    typeCharacter();
+                });
+            }
+
+            async function typeAllParagraphs() {
+                for (const paragraph of paragraphs) {
+                    await typeParagraph(paragraph);
+                    await new Promise(resolve => setTimeout(resolve, 500)); // Delay before next paragraph
+                    currentParagraph++;
+                }
+                proceedLink.classList.remove('hidden'); // Show the link after all paragraphs are typed
+            }
+
+             // Add event listener to the link to show an alert
+             document.getElementById('link1').addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('Content Warning: You are about to encounter the violence that the monstruous body experiences.');
+                window.location.href = this.href;
+            });
+
+             // Add event listener to the link to show an alert
+             document.getElementById('link1').addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('Content Warning: You are about to encounter the violence that the monstrous body experiences.');
+                window.location.href = this.href;
+            });
+
+            typeAllParagraphs();
+        });
+    </script>
+</body>
+</html>
