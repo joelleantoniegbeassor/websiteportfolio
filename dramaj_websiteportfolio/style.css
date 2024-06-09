@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+12+Charted&display=swap);
+
+body {
+    position: relative;
+  }
+  /*background mist*/
+  .background::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://i.gifer.com/DuXi.gif');
+    /*background-color: rgb(197, 206, 173);*/
+    background-blend-mode: difference; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.3;
+  }
+  
+  h1 {
+    font-family: "Arial";
+    color: white;
+    font-size: 10em;
+    text-align: center;
+    text-shadow: 5px 5px 20px #CCFF00;
+  }
+
+  #output {
+      font-family: Arial;
+      font-size: 2em;
+      color: white;
+      text-align: center;
+      text-shadow: 5px 5px 15px #CCFF00
+  }
+
+  .buttonLink_large a {
+      text-decoration: none;
+      border: #CCFF00;
+      bor
+      border-radius: 10px;
+  }
