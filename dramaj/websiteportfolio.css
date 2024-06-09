@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+12+Charted&display=swap);
+
+p {
+  font-family: arial;
+  font-size: 1.5em;
+  color: rgb(3, 0, 109);
+}
+
+title {
+  font-size: 4em;
+}
+
+a {	
+  font-family: "Jacquard 12","Arial",sans-serif;
+  font-size: 1.5em;
+  color: rgb(204, 255, 0);
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(204, 255, 0);
+  border-radius: 20px;
+  filter: blur(4px);
+  transition: all 0.3s; /* Smooth transition for hover effect */
+
+  display: inline-block;
+            margin: 0 10px; /* Space between the links */
+            padding: 10px 20px; /* Padding for the links */
+            text-decoration: none;
+            background-color: rgba(204, 255, 0, 0.3); /* Background color for visibility */
+            border: 2px solid rgb(204, 255, 0); /* Border color */
+            border-radius: 5px; /* Rounded corners */
+            color: rgb(3, 0, 109); /* Text color */
+            font-size: 1.2em; /* Font size */
+}
+
+a:hover {
+    color: rgb(3, 0, 109);
+    font-size: 1.5em;
+    filter: none;
+}
+
+body {
+  background-color: rgb(197, 206, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+	
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.typewriter {
+    overflow: hidden; /* Ensures the text stays within the container */
+    border-right: .15em solid rgb(204, 255, 0); /* Creates the blinking cursor effect */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    margin: 0 auto; /* Centers the text */
+    animation: typing 3.5s steps(40, end), blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(204, 255, 0); }
+}
+
+button {
+    color:rgb(3, 0, 109);
+    background-color:rgb(204, 255, 0);
+    font-family: Arial;
+}
