@@ -65,6 +65,5 @@ a:hover {
     border-radius: 5px; /* Rounded corners */
     color: rgb(3, 0, 109); /* Text color */
     font-size: 1.2em; /* Font size */
-    opacity: 0;
     transition: opacity 1s ease-in, font-size 0.3s, filter 0.3s;
 }
