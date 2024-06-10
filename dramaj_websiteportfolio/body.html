@@ -6,10 +6,28 @@
     <title>Body</title>
     <link rel="stylesheet" href="style2.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
         p, a {
             opacity: 0;
-            transition: opacity 1s ease-in-out;
         }
+
+        a {
+            margin-top: 10px;
+        }
+
+        #intro-paragraph {
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -18,7 +36,7 @@
     Your browser does not support the audio element.
 </audio>
 
-<p id="intro-paragraph">Please, interact with the page for a full experience.</p>
+<p id="intro-paragraph">Interact with the page for a full experience.</p>
 
 <a id="efeu-link" href="efeu.html">Efeu</a>
 <a id="abscheu-link" href="abscheu.html">Abscheu</a>
@@ -26,7 +44,7 @@
 
 <script>
     const audio = document.getElementById('background-music');
-    audio.volume = 0.1;  // Adjust the volume as needed
+    audio.volume = 1; 
 
     document.addEventListener('click', function startAudio() {
         if (audio.paused) {
@@ -38,9 +56,9 @@
         paragraph.style.opacity = 0;
 
         // Show the links relative to when the user interacts
-        showLink('efeu-link', 0); 
-        showLink('abscheu-link', 2000);
-        showLink('fanboy-link', 4000);
+        showLink('efeu-link', 40000); 
+        showLink('abscheu-link', 41000);
+        showLink('fanboy-link', 42000);
 
         // Remove the event listener after it has been triggered
         document.removeEventListener('click', startAudio);

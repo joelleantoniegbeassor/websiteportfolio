@@ -1,26 +1,32 @@
 @import url(https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+12+Charted&display=swap);
 
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
 
 body {
     background-color: rgb(197, 206, 173);
     display: flex;
+    overflow: auto;
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
-    padding: 40px;
-    height: 100vh;
+    padding: 60px;
+    box-sizing: border-box;
 }
 
 p {
     font-family: Arial, sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     color: rgb(3, 0, 109);
     transition: opacity 1s ease-in;
 }
 
 a {
     font-family: "Jacquard 12", "Arial", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: rgb(204, 255, 0);
     border-style: solid;
     border-width: 3px;
@@ -28,8 +34,8 @@ a {
     border-radius: 20px;
     transition: all 0.3s;
     display: inline;
-    margin: 10px; /* Space between the links */
     padding: 10px 20px; /* Padding for the links */
+    margin-right: 10px;
     text-decoration: none;
     background-color: rgba(204, 255, 0, 0.3); /* Background color for visibility */
     border: 2px solid rgb(204, 255, 0); /* Border color */
@@ -40,7 +46,7 @@ a {
 
 a:hover {
     color: rgb(3, 0, 109);
-    font-size: 2em;
+    font-size: 1.5em;
     filter: none;
 }
 

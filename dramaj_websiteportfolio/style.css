@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+12+Charted&display=swap);
 
+
+
 body {
     position: relative;
   }
@@ -38,26 +40,18 @@ body {
       font-weight: bold;
   }
 
-  .buttonLink_large a {
-      text-decoration: none;
-      border: #CCFF00;
-      bor
-      border-radius: 10px;
-  }
-
   button {
     background-color: #CCFF00;
-    color:#CCFF00;
     font-size: 2em;
-    text-decoration: none;
-    border-color: rgb(3, 0, 109);
     border-radius: 10px;
+    border: 2px solid rgb(3, 0, 109);
+    margin: 5px;
   }
 
   button a {
     text-decoration: none;
     color:rgb(3, 0, 109);
-
+    font-weight: 600;
   }
 
 

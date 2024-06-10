@@ -9,83 +9,89 @@
 
     <style>
 
+            /* Style Text Size and color*/
+            body {
+              font-family: arial;
+              color: rgb(3, 0, 109);
+              background-color: #C5CEAD;
+            }
 
+            /* Style the clickable columns */
+            td.clickable_title  {
+              cursor: pointer;
+              color: rgb(3, 0, 109);
+              text-decoration: none;
+              
+            }
 
-title {
-  font-size: 4em;
-}
-      /* Style Text Size and color*/
-      * {
-        font-family: arial;
-        color: rgb(3, 0, 109);
-        font-size: 24px;
-        color: #CCFF00;
-        background-color: #C5CEAD;
-        
-      }
-      /* Style the clickable columns */
-      td.clickable_nr, td.clickable_title, td.clickable_author  {
-        cursor: pointer;
-        color: #CCFF00;
-        text-decoration: none;
-        
-      }
-      /* Style the additional text */
-      .additional-text {
-        padding-left: 100px;
-        display: none;
+            td.clickable_nr, td.clickable_author {
+              cursor: pointer;
+              color: #CCFF00;
+              text-decoration: none;
+            }
+            /* Style the additional text */
+            .additional-text {
+              padding-left: 100px;
+              display: none;
+      
+            }
+            /* Style the Number*/
+            td.clickable_nr {
+              border-style: solid;
+              border-width: 2px;
+              border-radius: 35px;
+              padding-left: 35px;
+              padding-right: 35px;
+            }
+            /* Style Table*/
+      
+          table {
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            border-collapse: separate;
+            border-spacing: 30px 20px;
+            font-size: 1.5em;
+            color:rgb(3, 0, 109)
+          }
+      
+          /* Style Menu */
+            .dropbtn {
+              background-color: #fff;
+              color: #000;
+              padding: 5px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+      
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+      
+            .dropdown-content a {
+              color: #000;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+      
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
 
-      }
-      /* Style the Number*/
-      td.clickable_nr {
-        border-style: solid;
-        border-width: 2px;
-        border-radius: 35px;
-        padding-left: 35px;
-        padding-right: 35px;
-      }
-      /* Style Table*/
+            a{
+              text-decoration: none;
+              color: #CCFF00;
+            }
+      
+          </style>
 
-    table {
-      margin-left: auto;
-      margin-right: auto;
-      display: table;
-      border-collapse: separate;
-      border-spacing: 30px 20px;
-    }
-
-    /* Style Menu */
-      .dropbtn {
-        background-color: #fff;
-        color: #000;
-        padding: 5px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-
-      .dropdown-content a {
-        color: #000;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
-
-    </style>
 </head>
 <body>
 <div class="buttons">
@@ -104,7 +110,7 @@ title {
     <tr>
       <td class="clickable_nr" onclick="toggleText('additionalText1')">1</td>
       <td class="clickable_title" onclick="toggleText('additionalText1')">Excerpt of the theatrepiece «Frankenstein Lost»</td>
-      <td class="clickable_author" onclick="toggleText('additionalText1')">Dramaj</td>
+      <td class="clickable_author" onclick="toggleText('additionalText1')">dramaj</td>
     </tr>
     <tr id="additionalText1" class="additional-text">
       <td colspan="3">This is the additional text for the first row.</td>
@@ -113,7 +119,7 @@ title {
     <tr>
       <td class="clickable_nr" onclick="toggleText('additionalText2')"><a href="2">2</a></td>
       <td class="clickable_title" onclick="toggleText('additionalText2')">Additional Text 2</td>
-      <td class="clickable_author" onclick="toggleText('additionalText2')">Some more information</td>
+      <td class="clickable_author" onclick="toggleText('additionalText2')">Unknown</td>
     </tr>
     <tr id="additionalText2" class="additional-text">
       <td colspan="3">This is the additional text for the second row.</td>

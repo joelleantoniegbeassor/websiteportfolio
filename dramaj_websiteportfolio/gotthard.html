@@ -22,6 +22,12 @@
 
         #gotthardText {
             display: none;
+
+        }
+
+        #gotthard {
+            color: rgb(204, 255, 0);
+
         }
 
         
@@ -32,8 +38,8 @@
     <video id="gotthardVideo"  autoplay muted src="gotthardVideo.mp4" width="100%" height="100%" autoplay></video>
 
     <div id="gotthardText">
-        <p>after sitting upon a rock that overlooks a sea of ice are you now ready to hear your tale?</p>
-        <a href="erschaffung_1.html">yes</a>
+        <p id="gotthard">after sitting upon a rock that overlooks a sea of ice are you now ready to hear your tale?</p>
+        <a id ="gotthardLink" href="erschaffung_1.html">yes</a>
     </div>
 
 <script>
@@ -47,7 +53,7 @@
 }
 
     // Call the showText function after 40 seconds
-    setTimeout(showText, 40000);
+    setTimeout(showText, 10000);
 </script>
     <link rel="stylesheet" href="style.css">
 </head>
