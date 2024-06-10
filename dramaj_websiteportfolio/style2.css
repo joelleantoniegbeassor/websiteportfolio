@@ -6,29 +6,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
+    padding: 40px;
     height: 100vh;
-    margin: 0;
 }
 
 p {
     font-family: Arial, sans-serif;
-    font-size: 1.5em;
-    color: rgb(204, 255, 0);
+    font-size: 2em;
+    color: rgb(3, 0, 109);
     transition: opacity 1s ease-in;
 }
 
 a {
     font-family: "Jacquard 12", "Arial", sans-serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: rgb(204, 255, 0);
     border-style: solid;
     border-width: 3px;
     border-color: rgb(204, 255, 0);
     border-radius: 20px;
-    filter: blur(4px);
     transition: all 0.3s;
-    display: inline-block;
+    display: inline;
     margin: 10px; /* Space between the links */
     padding: 10px 20px; /* Padding for the links */
     text-decoration: none;
@@ -36,13 +35,16 @@ a {
     border: 2px solid rgb(204, 255, 0); /* Border color */
     border-radius: 5px; /* Rounded corners */
     color: rgb(3, 0, 109); /* Text color */
-    font-size: 1.2em; /* Font size */
     transition: opacity 1s ease-in, font-size 0.3s, filter 0.3s;
 }
 
 a:hover {
     color: rgb(3, 0, 109);
-    font-size: 1.5em;
+    font-size: 2em;
     filter: none;
+}
+
+.talelinks {
+    display: inline-flex;
 }
 
