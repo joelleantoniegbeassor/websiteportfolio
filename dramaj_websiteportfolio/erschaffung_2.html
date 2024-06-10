@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erschaffung 2</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        p, a {
+            opacity: 0;
+        }
+
+        .spaced {
+            padding: 50px;
+        }
+
+        #para8, #para9 {
+            color: rgb(3, 0, 109);        
+        }
+    </style>
+</head>
+<body>
+<p id="para1">ich</p> 
+<p id="para2">habe</p> 
+<p id="para3">keinen</p>
+<p id="para4">viele</p>
+<p id="para5">namen:</p>
+<p id="para6" class="spaced">widerliche masse, machenschaft, geschöpf, kreatur, deformierte gestalt, bestie, biest, bösewicht, dämon, satan, teufel, wesen, herr, tier, schurke, feind, gegner, wurm, wrack, urheber von unheil, mörder deines friedens</p>
+<p id="para7">ich bin. war. werde sein.</p>
+<p id="para8">the other monster is already tired of sharing.</p>
+<p id="para9">are you now ready to hear your own tale?</p>
+
+
+<a id="awakeninglink" href="erschaffung_1.html">yes</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = [
+            { id: "para1", delay: 2000 },
+            { id: "para2", delay: 4000 },
+            { id: "para3", delay: 6000 },
+            { id: "para4", delay: 8000 },
+            { id: "para5", delay: 10000 },
+            { id: "para6", delay: 12000 },
+            { id: "para7", delay: 22000 }, // 10 seconds after para6
+            { id: "para8", delay: 26000 },
+            { id: "para9", delay: 28000 },
+            { id: "awakeninglink", delay: 30000 }
+        ];
+
+        elements.forEach((element) => {
+            setTimeout(function() {
+                document.getElementById(element.id).style.opacity = 1;
+            }, element.delay);
+        });
+    });
+</script>
+</body>
+</html>

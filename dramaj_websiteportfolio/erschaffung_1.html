@@ -5,17 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erschaffung 1</title>
     <link rel="stylesheet" href="style2.css">
+    <style>
+        p, a {
+            opacity: 0;
+        }
+
+        .spaced {
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
-<p>du</p> 
-<p>hast</p> 
-<p>keinen</p>
-<p>viele</p>
-<p>namen:</p>
-<p>widerliche masse, machenschaft, geschöpf, kreatur, deformierte gestalt, bestie, biest, bösewicht, dämon, satan, teufel, wesen, herr, tier, schurke, feind, gegner, wurm, wrack,  urheber von unheil, mörder deines friedens</p>
-<br>
-<p>du bist. warst. wirst sein.</p>
+<p id="para1">du</p> 
+<p id="para2">hast</p> 
+<p id="para3">keinen</p>
+<p id="para4">viele</p>
+<p id="para5">namen:</p>
+<p id="para6" class="spaced">widerliche masse, machenschaft, geschöpf, kreatur, deformierte gestalt, bestie, biest, bösewicht, dämon, satan, teufel, wesen, herr, tier, schurke, feind, gegner, wurm, wrack, urheber von unheil, mörder deines friedens</p>
+<p id="para7">du bist. warst. wirst sein.</p>
 
 <a id="awakeninglink" href="awakening.html">awake</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = [
+            { id: "para1", delay: 2000 },
+            { id: "para2", delay: 4000 },
+            { id: "para3", delay: 6000 },
+            { id: "para4", delay: 8000 },
+            { id: "para5", delay: 10000 },
+            { id: "para6", delay: 12000 },
+            { id: "para7", delay: 22000 }, // 10 seconds after para6
+            { id: "awakeninglink", delay: 24000 }
+        ];
+
+        elements.forEach((element) => {
+            setTimeout(function() {
+                document.getElementById(element.id).style.opacity = 1;
+            }, element.delay);
+        });
+    });
+</script>
 </body>
 </html>
