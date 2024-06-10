@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<audio id="background-music" src="3_Toma Toma Final_mixdown.mp3" loop>
+<audio id="background-music" src="body.html.video.mp3">
     Your browser does not support the audio element.
 </audio>
 
@@ -33,16 +33,14 @@
             audio.play();
         }
 
-        // Show the paragraph after 1 second
-        setTimeout(() => {
-            const paragraph = document.getElementById('intro-paragraph');
-            paragraph.style.opacity = 1;
-        }, 1000);
+        // Hide the paragraph after user interaction
+        const paragraph = document.getElementById('intro-paragraph');
+        paragraph.style.opacity = 0;
 
         // Show the links relative to when the user interacts
-        showLink('efeu-link', 10000); 
-        showLink('abscheu-link', 11000);
-        showLink('fanboy-link', 12000);
+        showLink('efeu-link', 0); 
+        showLink('abscheu-link', 2000);
+        showLink('fanboy-link', 4000);
 
         // Remove the event listener after it has been triggered
         document.removeEventListener('click', startAudio);
@@ -61,6 +59,12 @@
         document.getElementById('efeu-link').style.display = 'none';
         document.getElementById('abscheu-link').style.display = 'none';
         document.getElementById('fanboy-link').style.display = 'none';
+
+        // Show the paragraph after 1 second
+        setTimeout(() => {
+            const paragraph = document.getElementById('intro-paragraph');
+            paragraph.style.opacity = 1;
+        }, 1000);
     };
 </script>
 
