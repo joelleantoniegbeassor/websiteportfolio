@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <p id="para1">Do you remember the first moments of your existence?</p>
+    <p id="para2">No?</p>
+    <p id="para3">Listen to your tale; if you have heard that, abandon or commiserate me, as you shall judge that I deserve. But hear me.</p>
+
+    <a id="link1" href="erschaffung_1.html">hear your tale</a>
+    <a id="link2" href="erschaffung_2.html">hear another monster's tale</a>
+    <a id="link3" href="gotthard.html">sit upon a rock that overlooks a sea of ice</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("para1").style.opacity = 1;
+            }, 2000);
+
+            setTimeout(function() {
+                document.getElementById("para2").style.opacity = 1;
+            }, 9000);
+
+            setTimeout(function() {
+                document.getElementById("para3").style.opacity = 1;
+            }, 15000);
+
+            setTimeout(function() {
+                document.getElementById("link1").style.opacity = 1;
+            }, 18000);
+
+            setTimeout(function() {
+                document.getElementById("link2").style.opacity = 1;
+            }, 19000);
+
+            setTimeout(function() {
+                document.getElementById("link3").style.opacity = 1;
+            }, 20000);
+        });
+    </script>
+</body>
+</html>

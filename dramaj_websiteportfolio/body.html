@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<audio id="background-music" src="3_Toma Toma Final_mixdown.mp3" loop autoplay>
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    const audio = document.getElementById('background-music');
+    audio.volume = 0.1;  // Adjust the volume as needed
+
+    function showLink(id, delay) {
+        setTimeout(() => {
+            document.getElementById(id).style.display = 'inline';
+        }, delay);
+    }
+
+    window.onload = function() {
+        showLink('efeu-link', 10000); 
+        showLink('abscheu-link', 11000);
+        showLink('fanboy-link', 12000);
+    };
+</script>
+
+<a id="efeu-link" href="efeu.html" style="display:none;">Efeu</a>
+<a id="abscheu-link" href="abscheu.html" style="display:none;">Abscheu</a>
+<a id="fanboy-link" href="fanboy.html" style="display:none;">Fanboy</a>
+
+</body>
+</html>
