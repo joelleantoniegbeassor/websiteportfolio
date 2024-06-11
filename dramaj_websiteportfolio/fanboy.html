@@ -29,19 +29,27 @@
             z-index: -1;
         }
 
-        #theorylink {
+        .theory-link {
             position: absolute;
-            bottom: 160px;
-            left: 80px;
+            left: calc(10% - 40px); /* Center in the left third */
             display: none;
             z-index: 1;
             opacity: 1;
+        }
+
+        #link1 {
+            top: 45%; /* Centered vertically */
+        }
+
+        #link2 {
+            top: 55%; /* Centered vertically, below the first link */
         }
     </style>
 </head>
 <body>
 
-    <a id="theorylink" href="monstertheory.html">level up your monster knowledge</a>
+    <a id="link1" class="theory-link" href="anger.html">anger</a>
+    <a id="link2" class="theory-link" href="anger.html">rage</a>
 
     <script>
         function showLink(id, delay) {
@@ -51,7 +59,8 @@
         }
 
         window.onload = function() {
-            showLink('theorylink', 5000); 
+            showLink('link1', 10000); // Show after 10 seconds
+            showLink('link2', 11000); // Show after 11 seconds
         };
     </script>
 </body>

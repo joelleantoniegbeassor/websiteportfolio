@@ -13,13 +13,21 @@
         <button type="button">
             <a href="list.html">INDEX</a>
         </button>
-        <button type="button">
+        <button type="button" id="alert">
             <a href="tale.html">GAME</a>
         </button>
         <button type="button">
             <a href="about.html">ABOUT</a>
         </button>
     </div>
+
+    <script>
+        document.getElementById('alert').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+            alert('For the full experience, turn on your volume.');
+            window.location.href = 'tale.html'; // Redirect after alert
+        });
+    </script>
 
 </body>
 </html>

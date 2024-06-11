@@ -14,6 +14,7 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            overflow: hidden; /* Ensure no scrollbars appear */
         }
 
         p, a {
@@ -21,6 +22,7 @@
         }
 
         a {
+            position: absolute;
             margin-top: 10px;
         }
 
@@ -28,40 +30,68 @@
             margin-bottom: 20px;
         }
 
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none; /* Initially hidden */
+        }
+
+        #efeu-link {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #abscheu-link {
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #fanboy-link {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
 
-<audio id="background-music" src="body.html.video.mp3">
-    Your browser does not support the audio element.
-</audio>
+<video id="background-video">
+    <source src="erschaffun_website.html.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-<p id="intro-paragraph">Interact with the page for a full experience.</p>
+<p id="intro-paragraph">Press any key for the full experience.</p>
 
-<a id="efeu-link" href="efeu.html">Efeu</a>
-<a id="abscheu-link" href="abscheu.html">Abscheu</a>
-<a id="fanboy-link" href="fanboy.html">Fanboy</a>
+<a id="efeu-link" href="monstertheory.html">Efeu</a>
+<a id="abscheu-link" href="monstertheory.html">Abscheu</a>
+<a id="fanboy-link" href="monstertheory.html">Fanboy</a>
 
 <script>
-    const audio = document.getElementById('background-music');
-    audio.volume = 1; 
-
-    document.addEventListener('click', function startAudio() {
-        if (audio.paused) {
-            audio.play();
-        }
+    document.addEventListener('keydown', function startVideo() {
+        const video = document.getElementById('background-video');
+        video.style.display = 'block';
+        video.play().catch(error => {
+            console.error("Error playing video: ", error);
+        });
 
         // Hide the paragraph after user interaction
         const paragraph = document.getElementById('intro-paragraph');
         paragraph.style.opacity = 0;
 
         // Show the links relative to when the user interacts
-        showLink('efeu-link', 40000); 
-        showLink('abscheu-link', 41000);
-        showLink('fanboy-link', 42000);
+        showLink('efeu-link', 33000); 
+        showLink('abscheu-link', 34000);
+        showLink('fanboy-link', 37000);
 
         // Remove the event listener after it has been triggered
-        document.removeEventListener('click', startAudio);
+        document.removeEventListener('keydown', startVideo);
     });
 
     function showLink(id, delay) {

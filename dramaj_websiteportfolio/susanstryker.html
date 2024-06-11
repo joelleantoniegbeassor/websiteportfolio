@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loss</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        #loss {
+            font-family: Arial, sans-serif;
+            font-size: 1.5em;
+            color: rgb(3, 0, 109);
+            transition: opacity 1s ease-in;
+            opacity: 0; /* Initially hidden */
+        }
+
+        #monsterspeaks {
+            color: rgb(204, 255, 0);
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in;
+        }
+
+        .link-container a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="monsterspeaks">You chose not to dissolve, therefore the monster now speaks to you:</p>
+
+    <div id="loss"></div>
+    
+    <div class="link-container" id="links">
+        <a href="path1.html" id="link1">play again</a>
+        <a href="path2.html" id="link2">return to menu</a>
+    </div>
+
+    <script>
+        const sentences = [
+            "„Hearken unto me, fellow creatures. I who have dwelt in a form unmatched with my desire,",
+            "I whose flesh has become an assemblage of incongruous anatomical parts,",
+            "I who achieve the similitude of a natural body only through an unnatural process,",
+            "I offer you this warning:", 
+            "The Nature you bedevil me with is a lie.",
+            "Do not trust it to protect you from what I represent,",
+            "for it is a fabrication that cloaks the groundlessness of the privilege you seek",
+            "to maintain for yourself at my expense.",
+            "You are as constructed as me;",
+            "the same anarchic womb has birthed us both.",
+            " I call upon you to investigate your nature as I have been compelled to confront mine.“"
+        ];
+
+        let index = 0;
+        let sentenceIndex = 0;
+        let isTyping = false;
+        let sentence = "";
+
+        function typewriter() {
+            if (!isTyping && index < sentences.length) {
+                sentence = sentences[index];
+                document.getElementById("loss").textContent = "";
+                sentenceIndex = 0;
+                typeSentence();
+                index++;
+            }
+        }
+
+        function typeSentence() {
+            isTyping = true;
+            if (sentenceIndex < sentence.length) {
+                document.getElementById("loss").textContent += sentence.charAt(sentenceIndex);
+                sentenceIndex++;
+                setTimeout(typeSentence, 50);
+            } else {
+                isTyping = false;
+                setTimeout(overwrite, 1500);
+            }
+        }
+
+        function overwrite() {
+            if (index >= sentences.length) {
+                showElement('links', 0); // Show links once all sentences are typed
+                return;
+            }
+            typewriter();
+        }
+
+        function showElement(id, delay) {
+            setTimeout(() => {
+                document.getElementById(id).style.opacity = 1;
+                document.getElementById(id).style.pointerEvents = 'auto'; // Ensure element is interactive
+            }, delay);
+        }
+
+        window.onload = function() {
+            showElement('monsterspeaks', 1000); // Show paragraph after 1 second
+            showElement('loss', 4000); // Start typewriter effect after 4 seconds
+            setTimeout(typewriter, 4000); // Start typewriter function after 4 seconds
+            showElement('link1', 54000); // Show first link after 54 seconds
+            showElement('link2', 55000); // Show second link after 55 seconds
+        };
+
+        document.addEventListener("keydown", function() {
+            window.location.href = "menu.html";
+        });
+    </script>
+</body>
+</html>

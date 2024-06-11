@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dramaj</title>
-<link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css">
     <style>
         #gotthardVideo {
             margin: none; 
@@ -20,48 +20,41 @@
             z-index: -1;
         }
 
-        #gotthardText {
+        #gotthardText{
             display: none;
-
-        }
-
-        #gotthard {
             color: rgb(204, 255, 0);
-
         }
 
-        
+         #gotthardLink {
+            display: none;
+         }
     </style>
 </head>
-
 <body>
-    <video id="gotthardVideo"  autoplay muted src="gotthardVideo.mp4" width="100%" height="100%" autoplay></video>
+    <video id="gotthardVideo" autoplay muted src="gotthardVideo.mp4" width="100%" height="100%"></video>
 
-    <div id="gotthardText">
-        <p id="gotthard">after sitting upon a rock that overlooks a sea of ice are you now ready to hear your tale?</p>
-        <a id ="gotthardLink" href="erschaffung_1.html">yes</a>
-    </div>
+    <p id="gotthardText">after sitting upon a rock that overlooks a sea of ice, are you now ready to hear your tale?</p>
+    <a id="gotthardLink" href="erschaffung_1.html">yes</a>
 
-<script>
-    // Get the div element by its id
-    const div = document.getElementById('gotthardText');
+    <script>
+        // Function to show the text after 10 seconds
+        function showText() {
+            const text = document.getElementById('gotthardText');
+            text.style.display = 'block';
+        }
 
-    // Function to show the text after 40 seconds
-    function showText() {
-    // Change the display property of the div to make it visible
-    div.style.display = 'block';
-}
+        // Function to show the link after 11 seconds
+        function showLink() {
+            const link = document.getElementById('gotthardLink');
+            link.style.display = 'block';
+        }
 
-    // Call the showText function after 40 seconds
-    setTimeout(showText, 10000);
-</script>
+        // Call the showText function after 10 seconds
+        setTimeout(showText, 10000);
+
+        // Call the showLink function after 11 seconds
+        setTimeout(showLink, 11000);
+    </script>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="videoContainer">
-        <video autoplay loop muted>
-          <source src="gotthardVideo.MOV" type="video/quicktime">
-        </video>
-      </div>
 </body>
 </html>
