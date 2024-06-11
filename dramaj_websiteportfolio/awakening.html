@@ -16,7 +16,10 @@
     <p id="p2">There is nothing.</p>
     <p id="p3">You don't know anything.</p>
     <p id="p4">How to begin?</p>
-    <a id="link" href="body.html">Expand your corporeality.</a>
+    <br>
+    <a id="link1" href="body.html">Expand your corporeality</a>
+    <br>
+    <a id="link2" href="body.html">Ingest screws of greed</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -25,13 +28,14 @@
                 document.getElementById("p2"),
                 document.getElementById("p3"),
                 document.getElementById("p4"),
-                document.getElementById("link")
+                document.getElementById("link1"),
+                document.getElementById("link2")
             ];
 
             elements.forEach((element, index) => {
                 setTimeout(() => {
                     element.style.opacity = 1;
-                }, index * 2000);
+                }, index * 1000);
             });
         });
     </script>
