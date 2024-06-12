@@ -33,13 +33,23 @@
             transition: opacity 1s ease-in;
         }
 
-        .link-container a {
-            margin: 0 10px;
+       
+
+        #listlink {
+            opacity: 0; /* Initially hidden */
+            margin-left: 10px; /* Space between the paragraph and the link */
+            transition: opacity 1s ease-in;
+            font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    color: rgb(204, 255, 0);
+    border: 1px solid rgb(204, 255, 0);
+    border-radius: 20px;
+    padding: 2px;
         }
     </style>
 </head>
 <body>
-    <p id="monsterspeaks">You chose not to dissolve, therefore the monster now speaks to you:</p>
+    <p id="monsterspeaks">You chose not to dissolve, therefore the monster now speaks to you: <a href="list.html" id="listlink">012</a></p>
 
     <div id="loss"></div>
     
@@ -60,7 +70,7 @@
             "to maintain for yourself at my expense.",
             "You are as constructed as me;",
             "the same anarchic womb has birthed us both.",
-            " I call upon you to investigate your nature as I have been compelled to confront mine.“"
+            "I call upon you to investigate your nature as I have been compelled to confront mine.“"
         ];
 
         let index = 0;
@@ -107,6 +117,7 @@
 
         window.onload = function() {
             showElement('monsterspeaks', 1000); // Show paragraph after 1 second
+            showElement('listlink', 1000); // Show listlink after 1 second
             showElement('loss', 4000); // Start typewriter effect after 4 seconds
             setTimeout(typewriter, 4000); // Start typewriter function after 4 seconds
             showElement('link1', 54000); // Show first link after 54 seconds

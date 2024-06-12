@@ -12,7 +12,7 @@
             margin: 20px;
         }
 
-        p, .link-container, .link-container a {
+        p, .link-container, .link-container a, .container a {
             visibility: hidden;
             opacity: 0;
         }
@@ -32,6 +32,12 @@
             display: flex;
             gap: 10px; /* Adds some space between the links */
         }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +46,10 @@
     <p class="left">«The monster always escapes.»</p>
     <p class="right">«And so the monster is dangerous, a form suspended between forms that threatens to smash distinctions.»</p>
     <p class="left">Do monsters really exist?</p>
-    <p class="left">Surely they must, for if they did not, how could we?</p>
+    <div class="container">
+        <p class="left" id="final-paragraph">Surely they must, for if they did not, how could we?</p>
+        <a id="listlink" href="list.html">005</a>
+    </div>
     <div class="link-container">
         <a href="abscheu.html">wander through the forest</a>
         <a href="abscheu.html">stroll through a village</a>
@@ -48,6 +57,8 @@
 
     <script>
         const paragraphs = document.querySelectorAll('p');
+        const finalParagraph = document.getElementById('final-paragraph');
+        const listlink = document.getElementById('listlink');
         const linkContainer = document.querySelector('.link-container');
         const links = document.querySelectorAll('.link-container a');
 
@@ -60,7 +71,15 @@
             }, delay);
         });
 
-        // Make the link container visible after the last paragraph appears
+        // Make the final paragraph and the list link visible at the same time
+        setTimeout(() => {
+            finalParagraph.style.visibility = 'visible';
+            finalParagraph.style.opacity = 1;
+            listlink.style.visibility = 'visible';
+            listlink.style.opacity = 1;
+        }, paragraphs.length * 2000); // Delay based on the number of paragraphs
+
+        // Make the link container visible after the final paragraph appears
         setTimeout(() => {
             linkContainer.style.visibility = 'visible';
             linkContainer.style.opacity = 1;
@@ -72,7 +91,7 @@
                     link.style.opacity = 1;
                 }, (index + 1) * 1000); // 1 second interval between links
             });
-        }, 12000); // 10 seconds delay for paragraphs + 1 second
+        }, (paragraphs.length + 1) * 2000); // Delay for paragraphs + 2 seconds
     </script>
 </body>
 </html>

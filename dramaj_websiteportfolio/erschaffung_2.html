@@ -17,6 +17,12 @@
         #para8, #para9 {
             color:#CCFF00;
         }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
     </style>
 </head>
 <body>
@@ -26,7 +32,10 @@
 <p id="para4">viele</p>
 <p id="para5">namen:</p>
 <p id="para6" class="spaced">widerliche masse, machenschaft, geschöpf, kreatur, deformierte gestalt, bestie, biest, bösewicht, dämon, satan, teufel, wesen, herr, tier, schurke, feind, gegner, wurm, wrack, urheber von unheil, mörder deines friedens</p>
+<div class="container">
 <p id="para7">ich bin. war. werde sein.</p>
+<a id="listlink" href="list.html">002</a>
+</div>
 <p id="para8">the monster's tale is actually your tale.</p>
 <p id="para9">are you now ready to listen to it?</p>
 
@@ -42,7 +51,8 @@
             { id: "para4", delay: 4000 },
             { id: "para5", delay: 5000 },
             { id: "para6", delay: 6000 },
-            { id: "para7", delay: 10000 }, // 10 seconds after para6
+            { id: "para7", delay: 10000 },
+            { id: "listlink", delay: 10000 }, // 10 seconds after para6
             { id: "para8", delay: 12000 },
             { id: "para9", delay: 13000 },
             { id: "awakeninglink", delay: 14000 }

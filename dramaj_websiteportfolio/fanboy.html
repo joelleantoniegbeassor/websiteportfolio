@@ -44,12 +44,22 @@
         #link2 {
             top: 55%; /* Centered vertically, below the first link */
         }
+
+        #listlink {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: none;
+            z-index: 1;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
 
     <a id="link1" class="theory-link" href="anger.html">anger</a>
     <a id="link2" class="theory-link" href="anger.html">rage</a>
+    <a id="listlink" href="list.html">008</a>
 
     <script>
         function showLink(id, delay) {
@@ -61,6 +71,7 @@
         window.onload = function() {
             showLink('link1', 10000); // Show after 10 seconds
             showLink('link2', 11000); // Show after 11 seconds
+            showLink('listlink', 5000); // Show after 5 seconds
         };
     </script>
 </body>

@@ -58,6 +58,11 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        #listlink {
+            right: 20px;
+            bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +77,7 @@
 <a id="efeu-link" href="monstertheory.html">Efeu</a>
 <a id="abscheu-link" href="monstertheory.html">Abscheu</a>
 <a id="fanboy-link" href="monstertheory.html">Fanboy</a>
+<a id="listlink" href="list.html">004</a>
 
 <script>
     document.addEventListener('keydown', function startVideo() {
@@ -90,6 +96,9 @@
         showLink('abscheu-link', 34000);
         showLink('fanboy-link', 37000);
 
+        // Show the extra link 10 seconds after interaction
+        showLink('listlink', 10000);
+
         // Remove the event listener after it has been triggered
         document.removeEventListener('keydown', startVideo);
     });
@@ -107,6 +116,7 @@
         document.getElementById('efeu-link').style.display = 'none';
         document.getElementById('abscheu-link').style.display = 'none';
         document.getElementById('fanboy-link').style.display = 'none';
+        document.getElementById('listlink').style.display = 'none';
 
         // Show the paragraph after 1 second
         setTimeout(() => {

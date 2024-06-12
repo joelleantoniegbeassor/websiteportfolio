@@ -8,89 +8,61 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+      /* Style Text in general*/
+        body {
+        font-family: arial;
+        color: rgb(3, 0, 109);
+        background-color: #C5CEAD;
+        }
 
-            /* Style Text Size and color*/
-            body {
-              font-family: arial;
-              color: rgb(3, 0, 109);
-              background-color: #C5CEAD;
-            }
+        /* Style the clickable columns */
+        td.clickable_title, td.clickable_author {
+          cursor: pointer;
+          color: rgb(3, 0, 109);
+          text-decoration: none;
+        }
 
-            /* Style the clickable columns */
-            td.clickable_title  {
-              cursor: pointer;
-              color: rgb(3, 0, 109);
-              text-decoration: none;
-              
-            }
+        td.clickable_nr {
+          cursor: pointer;
+          color: #CCFF00;
+          text-decoration: none;
+        }
+        
+        /* Style the additional text */
+        .additional-text {
+          padding-left: 200px;
+          display: none;
+          font-size: 0.8em;
+        }
+        
+        /* Style the Number*/
+        td.clickable_nr {
+          border-style: solid;
+          border-width: 2px;
+          border-radius: 20px;
+          margin: 2px;
+          padding: 3px;
+        }
+        
+        /* Style Table*/
+        table {
+          margin-left: auto;
+          margin-right: auto;
+          display: table;
+          border-collapse: separate;
+          border-spacing: 30px 20px;
+          font-size: 1.5em;
+          color:rgb(3, 0, 109)
+        }
 
-            td.clickable_nr, td.clickable_author {
-              cursor: pointer;
-              color: #CCFF00;
-              text-decoration: none;
-            }
-            /* Style the additional text */
-            .additional-text {
-              padding-left: 100px;
-              display: none;
+        a {
+          text-decoration: none;
+          color: #CCFF00;
+          text-align: center;
+          font-size: 1em;
+        }
       
-            }
-            /* Style the Number*/
-            td.clickable_nr {
-              border-style: solid;
-              border-width: 2px;
-              border-radius: 35px;
-              padding-left: 35px;
-              padding-right: 35px;
-            }
-            /* Style Table*/
-      
-          table {
-            margin-left: auto;
-            margin-right: auto;
-            display: table;
-            border-collapse: separate;
-            border-spacing: 30px 20px;
-            font-size: 1.5em;
-            color:rgb(3, 0, 109)
-          }
-      
-          /* Style Menu */
-            .dropbtn {
-              background-color: #fff;
-              color: #000;
-              padding: 5px;
-              font-size: 16px;
-              border: none;
-              cursor: pointer;
-            }
-      
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f9f9f9;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-      
-            .dropdown-content a {
-              color: #000;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-      
-            .dropdown:hover .dropdown-content {
-              display: block;
-            }
-
-            a{
-              text-decoration: none;
-              color: #CCFF00;
-            }
-      
-          </style>
+    </style>
 
 </head>
 <body>
@@ -108,22 +80,137 @@
 
   <table>
     <tr>
-      <td class="clickable_nr" onclick="toggleText('additionalText1')"><a href="erschaffung_1.html">7258</a></td>
-      <td class="clickable_title" onclick="toggleText('additionalText1')">Excerpt of the theatrepiece «Frankenstein Lost»</td>
-      <td class="clickable_author" onclick="toggleText('additionalText1')">dramaj</td>
+      <td class="clickable_nr" onclick="toggleText('additionalText1')"><a href="tale.html">001</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText1')">Frankenstein; or, The Modern Prometheus</td>
+      <td class="clickable_author" onclick="toggleText('additionalText1')">Mary Wollstonecraft Shelley</td>
     </tr>
     <tr id="additionalText1" class="additional-text">
-      <td colspan="3">This is the additional text for the first row.</td>
+      <td colspan="3">
+      (1) Edited excerpt from the original text: "Listen to my tale; <br> 
+      when you have heard that, abandon or commiserate me, as you shall <br>
+      judge that I deserve. But hear me" (Shelley, 2003, p. 76). <br> <br>
+      In the original novel, the scientist Frankenstein creates a monster, <br> 
+      which is rejected and feared by all of humanity, including Frankenstein,  <br> 
+      its creator. This leads to the monster begging Frankenstein <br>
+      to create a second monster to save him from loneliness. <br><br>
+      (2) This extract from the original novel (Shelley, 1987, p. 135) describes the<br>
+      violence that the monster has repeatedly experienced from human society. 
+      </td>
     </tr>
             
     <tr>
-      <td class="clickable_nr" onclick="toggleText('additionalText2')"><a href="2">2</a></td>
-      <td class="clickable_title" onclick="toggleText('additionalText2')">Additional Text 2</td>
-      <td class="clickable_author" onclick="toggleText('additionalText2')">Unknown</td>
+      <td class="clickable_nr" onclick="toggleText('additionalText2')"><a href="erschaffung_1.html">002</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText2')">Monster Names</td>
+      <td class="clickable_author" onclick="toggleText('additionalText2')">dramaj</td>
     </tr>
     <tr id="additionalText2" class="additional-text">
-      <td colspan="3">This is the additional text for the second row.</td>
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost. <br>
+      When we read the book we realised that the monster has no real name, <br>
+      and at the same time many ways in which it is addressed, in insulting ways. <br>
+      This is a collection of all names, of how the monster is called and insulted, <br>
+      gathered from the whole book. </td>
     </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText3')"><a href="gotthard.html">003</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText3')">Gotthard</td>
+      <td class="clickable_author" onclick="toggleText('additionalText3')">Mary Wollstonecraft Shelley</td>
+    </tr>
+    <tr id="additionalText3" class="additional-text">
+      <td colspan="3">During the rehearsal phase, we took a trip to the mountains, <br>
+        as a large part of the original novel is set in the alps. <br>
+        This is a video that was created there. </td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText4')"><a href="body.html">004</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText4')">corporeality</td>
+      <td class="clickable_author" onclick="toggleText('additionalText4')">dramaj</td>
+    </tr>
+    <tr id="additionalText4" class="additional-text">
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText12')"><a href="anger.html">005</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText12')">Monster Culture (Seven Theses)</td>
+      <td class="clickable_author" onclick="toggleText('additionalText12')">Jeffrey Jerome Cohen </td>
+    </tr>
+    <tr id="additionalText12" class="additional-text">
+      <td colspan="3">The essay: Monster Cultures (Seven Theses) <br>
+      has been an important text for this project <br>
+      as it helped us understand the socio*political*historical meaning of monsters. <br><br>
+      Find the full text <a target="_blank" href="http://ptfaculty.gordonstate.edu/rscoggins/Cohen,%20Monster%20Culture%20(Seven%20Theses),%203-20.pdf">here.</a></td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText5')"><a href="abscheu.html">006</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText5')">sentiments</td>
+      <td class="clickable_author" onclick="toggleText('additionalText5')">dramaj</td>
+    </tr>
+    <tr id="additionalText5" class="additional-text">
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText6')"><a href="abscheu.html">007</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText6')">abeni awo abeni</td>
+      <td class="clickable_author" onclick="toggleText('additionalText6')">dramaj</td>
+    </tr>
+    <tr id="additionalText6" class="additional-text">
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText7')"><a href="fanboy.html">008</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText7')">Monster Diary</td>
+      <td class="clickable_author" onclick="toggleText('additionalText7')">dramaj</td>
+    </tr>
+    <tr id="additionalText7" class="additional-text">
+      <td colspan="3">This is a text that was created during the rehearsal phase.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText8')"><a href="anger.html">009</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText8')">Love and rage: the path of liberation through anger</td>
+      <td class="clickable_author" onclick="toggleText('additionalText8')">Rod Owens</td>
+    </tr>
+    <tr id="additionalText8" class="additional-text">
+      <td colspan="3">The book: "Love and rage: the path of liberation through anger" (Owens, 2020) <br>
+      had a strong influence on the further development of the play, <br>
+      because the text is about how to use your anger creatively and productively.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText9')"><a href="anger.html">010</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText9')">heavy heart</td>
+      <td class="clickable_author" onclick="toggleText('additionalText9')">dramaj</td>
+    </tr>
+    <tr id="additionalText9" class="additional-text">
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText10')"><a href="anger.html">011</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText10')">I love you and I love you</td>
+      <td class="clickable_author" onclick="toggleText('additionalText10')">dramaj</td>
+    </tr>
+    <tr id="additionalText10" class="additional-text">
+      <td colspan="3">This is an excerpt from the play Frankenstein Lost.</td>
+    </tr>
+
+    <tr>
+      <td class="clickable_nr" onclick="toggleText('additionalText11')"><a href="susanstryker.html">012</a></td>
+      <td class="clickable_title" onclick="toggleText('additionalText11')">My Words to Victor Frankenstein</td>
+      <td class="clickable_author" onclick="toggleText('additionalText11')">Susan Stryker</td>
+    </tr>
+    <tr id="additionalText11" class="additional-text">
+      <td colspan="3">«My words to Victor Frankenstein above the Village of Chamounix» is an <br> 
+        essay by Susan Stryker, a poetic yet scientific attempt to identify with the <br>
+        monster's construction and becoming as a trans woman. The text serves <br>
+        as a beautiful but potent threat to all those, who haven't made peace with <br>their inherent monstrosity. <br><br>Find the full text <a target="_blank" href="https://sites.evergreen.edu/politicalshakespeares/wp-content/uploads/sites/226/2015/12/Stryker-My-Words-to-VF.pdf">here.</a></td>
+    </tr>
+
   </table>
         
   <script>
@@ -136,23 +223,6 @@
     urlMenu.onchange = function(){
       var userQoption = this.options
     }
-    // JavaScript Menu
-    function toggleDropdown() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    };
-
   </script>
 
 </body>
