@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: rgb(197, 206, 173);
+        }
+
+        h2, .h2-container a, li {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(3, 0, 109);
+            margin: 0;
+            text-decoration: none;
+        }
+
+        .h2-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 400px;
+        }
+
+        .content-container, .work-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 400px;
+        }
+
+        .content-container img {
+            max-width: 200px; /* Adjust the size as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin: 30px 0 0 30px;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: rgb(3, 0, 109);
+            text-align: justify; /* Justify text */
+            margin: 20px 0; /* Added margin for spacing between paragraphs */
+        }
+
+        #yellow {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            color: rgb(204, 255, 0);
+        }
+
+        #quote {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: rgb(204, 255, 0);
+            text-align: end;
+            margin: 20px 0; /* Added margin for spacing between paragraphs */
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 400px;
+        }
+
+        .flex-container p {
+            margin: 0;
+        }
+
+        .flex-container a {
+            margin-left: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 20px 0;
+        }
+
+        .buttons button {
+            margin: 0 10px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #siteyouareon {
+            color: rgb(204, 255, 0);
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .h2-container, .content-container, .work-container, .flex-container {
+                margin: 0 20px;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .content-container img {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            .buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .buttons button {
+                margin: 10px;
+            }
+
+            ul {
+                list-style-position: inside;
+                padding-left: 0;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            p {
+                font-size: 1em;
+            }
+
+            .content-container img {
+                max-width: 150px;
+            }
+
+            .buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .buttons button {
+                margin: 10px;
+            }
+
+            ul {
+                list-style-position: inside;
+                padding-left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button type="button">
+            <a href="list.html">INDEX</a>
+        </button>
+        <button type="button" id="alert">
+            <a href="tale.html">GAME</a>
+        </button>
+        <button type="button">
+            <a href="about.html">ABOUT</a>
+        </button>
+    </div>
+
+    <div class="h2-container">
+        <a href="about.html"><h2>dramaj</h2></a>
+        <h2 id="siteyouareon">David</h2>
+        <a href="about_joelle.html"><h2>Joëlle</h2></a>
+    </div>
+    
+    <div class="content-container">
+        <div>
+            <p>David Gees <span id="yellow">(they/he)</span> is a director*writer*researcher and performer*artist working at the intersection of theater, performance and theory. After working as an intern at Schauspielhaus Zürich during the 2020/21 season, they moved to Vienna to study Cross-Disciplinary Strategies at the University of Applied Arts Vienna. Meanwhile they started to work as a director's assistant at Theater Nestroyhof Hamakom and Schauspielhaus Wien.</p>
+            <p>In the course of their studies a collaboration with Joëlle Antonie Gbeassor emerged, with whom he produced and co-directed «Daddy's favourite: Monsta Energy: a fairytale» (2023) and «Frankenstein Lost» (2023/24). In 2024, they founded the theatre*performance*production collective <span id="yellow">dramaj</span> together.</p>
+            <p>Their previous work includes:</p>
+            <ul>
+                <li>«Frankenstein Lost»</li>
+                <li>«Daddy's favourite: Monsta Energy: a fairytale»</li>
+                <li><a href="https://www.schauspielhaus.ch/de/kalender/20858/nichts-oder-null">«Nichts oder Null»</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="work-container"></div>
+</body>
+</html>

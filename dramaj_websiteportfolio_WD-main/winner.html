@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .background {
+            /* Your existing background styles */
+        }
+        #listlink {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        .link-container a {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <a href="list.html" id="listlink">011</a>
+    <div class="link-container" id="links">
+        <a href="playagain.html" id="link1">play Again</a>
+        <a href="menu.html" id="link2">return to Menu</a>
+    </div>
+    <audio id="background-audio" autoplay>
+        <source src="yeinousound_website.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function showElement(id, delay) {
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                element.style.opacity = 1;
+                element.style.pointerEvents = 'auto'; // Ensure element is interactive
+            }, delay);
+        }
+
+        window.onload = function() {
+            const audio = document.getElementById('background-audio');
+            audio.volume = 0.5; // Adjust the volume as needed
+            showElement('listlink', 10000); // Show listlink after 10 seconds
+
+            audio.addEventListener('ended', function() {
+                showElement('links', 0); // Show links once the audio has ended
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dramaj</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        #gotthardVideo {
+            margin: none; 
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        #gotthardText{
+            display: none;
+            color: rgb(204, 255, 0);
+        }
+
+         #gotthardLink {
+            display: none;
+         }
+    </style>
+</head>
+<body>
+    <video id="gotthardVideo" autoplay muted src="gotthardVideo.mp4" width="100%" height="100%"></video>
+
+    <p id="gotthardText">after sitting upon a rock that overlooks a sea of ice, are you now ready to hear your tale?</p>
+    <a id="gotthardLink" href="erschaffung_1.html">yes</a>
+
+    <script>
+        // Function to show the text after 10 seconds
+        function showText() {
+            const text = document.getElementById('gotthardText');
+            text.style.display = 'block';
+        }
+
+        // Function to show the link after 11 seconds
+        function showLink() {
+            const link = document.getElementById('gotthardLink');
+            link.style.display = 'block';
+        }
+
+        // Call the showText function after 10 seconds
+        setTimeout(showText, 15000);
+
+        // Call the showLink function after 11 seconds
+        setTimeout(showLink, 16000);
+    </script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>

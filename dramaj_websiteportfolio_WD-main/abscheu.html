@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 33.33%;
+            text-align: justify;
+            padding: 10px;
+        }
+
+        p, .audio, .extra-links a, .link-container a, #newlink {
+            opacity: 0;
+            pointer-events: none;
+            margin: 0;
+        }
+
+        p {
+            margin-bottom: 40px; /* Space between paragraphs and other elements */
+        }
+
+        #listlink {
+            margin-left: 10px; /* Space between the paragraph and the link */
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.7em;
+            color: rgb(204, 255, 0);
+            border: 1px solid rgb(204, 255, 0);
+            border-radius: 20px;
+            padding: 2px;
+        }
+
+        .audio {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0; /* Space above and below the audio element */
+        }
+
+        .audio audio {
+            background-color: rgb(204, 255, 0); /* Custom background color */
+            border: none; /* Remove border */
+        }
+
+        #second-paragraph {
+            text-align: center; /* Center the second paragraph */
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px; /* Space above the links */
+        }
+
+        .link-container a {
+            display: inline-block;
+        }
+
+        .extra-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px; /* Space above the extra links */
+        }
+
+        .extra-links a {
+            margin: 10px 0; /* Space between extra links */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="first-paragraph">
+            "Kaum hast du den Fuß über die Schwelle gesetzt, da kreischten die Kinder auf. 
+            Das ganze Dorf geriet in Aufruhr. Manche flüchteten, manche griffen dich an, 
+            bis du, von Steinen und vielen anderen Wurfgeschossen zerschunden, 
+            ins offene Land entkamst und dich angsterfüllt in einen niedrigen Schuppen flüchtetest.”
+            <a href="list.html" id="listlink">001-2</a>
+        </p>
+        <div class="audio" id="first-audio">
+            <audio controls>
+                <source src="moubi_kurz.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <p id="second-paragraph">What do you do now?</p>
+        <div class="link-container">
+            <a href="#" id="first-link">Read a book</a>
+            <a href="#" id="second-link">Observe human affection</a>
+        </div>
+        <div class="audio" id="audio">
+            <audio controls>
+                <source src="moubi_lang.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="extra-links" id="extra-links">
+            <a href="fanboy.html" id="third-link">I just want to be</a>
+            <a href="fanboy.html" id="fourth-link">I just want to be like you</a>
+            <a href="fanboy.html" id="fifth-link">I just want to be loved like you</a>
+        </div>
+    </div>
+
+    <script>
+        const firstParagraph = document.getElementById('first-paragraph');
+        const newLink = document.getElementById('newlink');
+        const firstAudio = document.getElementById('first-audio');
+        const audio = document.getElementById('audio');
+        const secondParagraph = document.getElementById('second-paragraph');
+        const linkContainer = document.querySelector('.link-container');
+        const firstLink = document.getElementById('first-link');
+        const secondLink = document.getElementById('second-link');
+        const thirdLink = document.getElementById('third-link');
+        const fourthLink = document.getElementById('fourth-link');
+        const fifthLink = document.getElementById('fifth-link');
+
+        // Function to show an element
+        function showElement(element, delay) {
+            setTimeout(() => {
+                element.style.opacity = 1;
+                element.style.pointerEvents = 'auto';
+                console.log(`${element.id} is now visible`);
+            }, delay);
+        }
+
+        // Set timeout for the first paragraph and new link
+        showElement(firstParagraph, 1000);
+        showElement(newLink, 1000);
+
+        // Set timeout for the first audio
+        showElement(firstAudio, 11000);
+
+        // Set timeout for the second paragraph
+        showElement(secondParagraph, 21000);
+
+        // Set timeout for the first and second links
+        showElement(firstLink, 22000);
+        showElement(secondLink, 23000);
+
+        // Function to show audio and schedule extra links to appear
+        function showAudioAndLinks() {
+            showElement(audio, 0);
+        }
+
+        // Event listeners for the links
+        firstLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showAudioAndLinks();
+        });
+
+        secondLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showAudioAndLinks();
+        });
+
+        // Set timeouts for the extra links to appear 30, 31, and 32 seconds after page load
+        showElement(thirdLink, 40000);
+        showElement(fourthLink, 41000);
+        showElement(fifthLink, 42000);
+    </script>
+</body>
+</html>

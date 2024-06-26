@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Theory</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        p, .link-container, .link-container a, .container a {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        p.left {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        p.right {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .link-container {
+            align-self: flex-end;
+            display: flex;
+            gap: 10px; /* Adds some space between the links */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p class="left">«The monster's body quite literally incorporates fear, desire, anxiety, and fantasy.»</p>
+    <p class="right">«The monster is difference made flesh, come to dwell among us.»</p>
+    <p class="left">«The monster always escapes.»</p>
+    <p class="right">«And so the monster is dangerous, a form suspended between forms that threatens to smash distinctions.»</p>
+    <p class="left">Do monsters really exist?</p>
+    <div class="container">
+        <p class="left" id="final-paragraph">Surely they must, for if they did not, how could we?</p>
+        <a id="listlink" href="list.html">005</a>
+    </div>
+    <div class="link-container">
+        <a href="abscheu.html">wander through the forest</a>
+        <a href="abscheu.html">stroll through a village</a>
+    </div>
+
+    <script>
+        const paragraphs = document.querySelectorAll('p');
+        const finalParagraph = document.getElementById('final-paragraph');
+        const listlink = document.getElementById('listlink');
+        const linkContainer = document.querySelector('.link-container');
+        const links = document.querySelectorAll('.link-container a');
+
+        // Set timeouts for paragraphs
+        paragraphs.forEach((paragraph, index) => {
+            const delay = (index + 1) * 2000; // 2 seconds interval
+            setTimeout(() => {
+                paragraph.style.visibility = 'visible';
+                paragraph.style.opacity = 1;
+            }, delay);
+        });
+
+        // Make the final paragraph and the list link visible at the same time
+        setTimeout(() => {
+            finalParagraph.style.visibility = 'visible';
+            finalParagraph.style.opacity = 1;
+            listlink.style.visibility = 'visible';
+            listlink.style.opacity = 1;
+        }, paragraphs.length * 2000); // Delay based on the number of paragraphs
+
+        // Make the link container visible after the final paragraph appears
+        setTimeout(() => {
+            linkContainer.style.visibility = 'visible';
+            linkContainer.style.opacity = 1;
+
+            // Set timeouts for links within the container
+            links.forEach((link, index) => {
+                setTimeout(() => {
+                    link.style.visibility = 'visible';
+                    link.style.opacity = 1;
+                }, (index + 1) * 1000); // 1 second interval between links
+            });
+        }, (paragraphs.length + 1) * 2000); // Delay for paragraphs + 2 seconds
+    </script>
+</body>
+</html>

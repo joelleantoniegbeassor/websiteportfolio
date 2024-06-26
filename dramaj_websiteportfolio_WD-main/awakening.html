@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        p, a {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">You wake up.</p>
+    <p id="p2">There is nothing.</p>
+    <p id="p3">You don't know anything.</p>
+    <p id="p4">How to begin?</p>
+    <br>
+    <a id="link1" href="body.html">Expand your corporeality</a>
+    <br>
+    <a id="link2" href="body.html">Ingest screws of greed</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = [
+                document.getElementById("p1"),
+                document.getElementById("p2"),
+                document.getElementById("p3"),
+                document.getElementById("p4"),
+                document.getElementById("link1"),
+                document.getElementById("link2")
+            ];
+
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = 1;
+                }, index * 1000);
+            });
+        });
+    </script>
+</body>
+</html>

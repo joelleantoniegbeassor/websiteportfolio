@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden; /* Ensure no scrollbars appear */
+        }
+
+        p, a {
+            opacity: 0;
+        }
+
+        a {
+            position: absolute;
+            margin-top: 10px;
+        }
+
+        #intro-paragraph {
+            margin-bottom: 20px;
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none; /* Initially hidden */
+        }
+
+        #efeu-link {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #abscheu-link {
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #fanboy-link {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #listlink {
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<video id="background-video">
+    <source src="erschaffun_website.html.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<p id="intro-paragraph">Press any key for the full experience.</p>
+
+<a id="efeu-link" href="monstertheory.html">Efeu</a>
+<a id="abscheu-link" href="monstertheory.html">Abscheu</a>
+<a id="fanboy-link" href="monstertheory.html">Fanboy</a>
+<a id="listlink" href="list.html">004</a>
+
+<script>
+    document.addEventListener('keydown', function startVideo() {
+        const video = document.getElementById('background-video');
+        video.style.display = 'block';
+        video.play().catch(error => {
+            console.error("Error playing video: ", error);
+        });
+
+        // Hide the paragraph after user interaction
+        const paragraph = document.getElementById('intro-paragraph');
+        paragraph.style.opacity = 0;
+
+        // Show the links relative to when the user interacts
+        showLink('efeu-link', 33000); 
+        showLink('abscheu-link', 34000);
+        showLink('fanboy-link', 37000);
+
+        // Show the extra link 10 seconds after interaction
+        showLink('listlink', 10000);
+
+        // Remove the event listener after it has been triggered
+        document.removeEventListener('keydown', startVideo);
+    });
+
+    function showLink(id, delay) {
+        setTimeout(() => {
+            const link = document.getElementById(id);
+            link.style.display = 'inline';
+            link.style.opacity = 1;
+        }, delay);
+    }
+
+    window.onload = function() {
+        // Initially hide the links
+        document.getElementById('efeu-link').style.display = 'none';
+        document.getElementById('abscheu-link').style.display = 'none';
+        document.getElementById('fanboy-link').style.display = 'none';
+        document.getElementById('listlink').style.display = 'none';
+
+        // Show the paragraph after 1 second
+        setTimeout(() => {
+            const paragraph = document.getElementById('intro-paragraph');
+            paragraph.style.opacity = 1;
+        }, 1000);
+    };
+</script>
+
+</body>
+</html>

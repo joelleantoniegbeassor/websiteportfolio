@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dramaj</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="buttons">
+        <button type="button">
+            <a href="list.html">INDEX</a>
+        </button>
+        <button type="button" id="alert">
+            <a href="tale.html">GAME</a>
+        </button>
+        <button type="button">
+            <a href="about.html">ABOUT</a>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('alert').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+            alert('For the full experience, turn on your volume.');
+            window.location.href = 'tale.html'; // Redirect after alert
+        });
+    </script>
+
+</body>
+</html>

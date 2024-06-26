@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 60px;
+        }
+
+        p, .audio, .link-container a {
+            opacity: 0;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        .left-bound {
+            text-align: left;
+            width: 100%;
+        }
+
+        .right-bound {
+            text-align: right;
+            width: 100%;
+        }
+
+        #listlink {
+            opacity: 0;
+            margin: 20px 0;
+        }
+
+        .audio {
+            margin: 40px 0; /* Space above and below the audio element */
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .audio audio {
+            background-color: rgb(204, 255, 0); /* Custom background color */
+            border: none; /* Remove border */
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .link-container a {
+            display: inline-block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <p class="left-bound" id="first-paragraph">“Anger and rage are expressions of the same experience of being hurt, and the tension from needing to care for ourselves while also trying to figure out how to be safe.”</p>
+    <a href="list.html" id="listlink">009</a>
+    <p class="right-bound" id="second-paragraph">“Where are you hurting? Where is the aching? Where is your woundedness? What is your anger trying to protect?”</p>
+    <div class="audio" id="audio-element">
+        <audio controls>
+            <source src="yeinou_kurz.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div class="link-container">
+        <a href="winner.html" id="first-link">use your anger to dissolve into the mist</a>
+        <a href="susanstryker.html" id="second-link">I don't want to dissolve</a>
+    </div>
+
+    <script>
+        function showElement(id, delay) {
+            setTimeout(() => {
+                document.getElementById(id).style.opacity = 1;
+            }, delay);
+        }
+
+        window.onload = function() {
+            showElement('first-paragraph', 1000);
+            showElement('listlink', 2500);
+            showElement('second-paragraph', 4000);
+            showElement('audio-element', 10000);
+            showElement('first-link', 20000);
+            showElement('second-link', 21000);
+        };
+    </script>
+</body>
+</html>

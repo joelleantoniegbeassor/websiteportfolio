@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erschaffung 2</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        p, a {
+            opacity: 0;
+        }
+
+        .spaced {
+            padding-left: 50px;
+        }
+
+        #para8, #para9 {
+            color:#CCFF00;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+    </style>
+</head>
+<body>
+<p id="para1">ich</p> 
+<p id="para2">habe</p> 
+<p id="para3">keinen</p>
+<p id="para4">viele</p>
+<p id="para5">namen:</p>
+<p id="para6" class="spaced">widerliche masse, machenschaft, geschöpf, kreatur, deformierte gestalt, bestie, biest, bösewicht, dämon, satan, teufel, wesen, herr, tier, schurke, feind, gegner, wurm, wrack, urheber von unheil, mörder deines friedens</p>
+<div class="container">
+<p id="para7">ich bin. war. werde sein.</p>
+<a id="listlink" href="list.html">002</a>
+</div>
+<p id="para8">the monster's tale is actually your tale.</p>
+<p id="para9">are you now ready to listen to it?</p>
+
+
+<a id="awakeninglink" href="erschaffung_1.html">yes</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = [
+            { id: "para1", delay: 1000 },
+            { id: "para2", delay: 2000 },
+            { id: "para3", delay: 3000 },
+            { id: "para4", delay: 4000 },
+            { id: "para5", delay: 5000 },
+            { id: "para6", delay: 6000 },
+            { id: "para7", delay: 10000 },
+            { id: "listlink", delay: 10000 }, // 10 seconds after para6
+            { id: "para8", delay: 12000 },
+            { id: "para9", delay: 13000 },
+            { id: "awakeninglink", delay: 14000 }
+        ];
+
+        elements.forEach((element) => {
+            setTimeout(function() {
+                document.getElementById(element.id).style.opacity = 1;
+            }, element.delay);
+        });
+    });
+</script>
+</body>
+</html>
